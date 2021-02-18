@@ -26,7 +26,7 @@ public class GuessTheNumber {
         int rNum=(int)(Math.random()*(max-min+1)+min);
         System.out.println("The random number is "+rNum);
         int num=0;
-        
+                
         do{
             System.out.println("Write a number: ");
             num=mySc.nextInt();
@@ -37,14 +37,23 @@ public class GuessTheNumber {
                 System.out.println("Congratulations! You got it!");
             }else if(num>rNum){
                 System.out.println("The number you wrote is greater than the random number!");
+                clueNum(rNum);   //a clue for the user (Jenny)           
             }else{
                 System.out.println("The number you wrote is less than the random number!");
+                clueNum(rNum);  //a clue for the user (Jenny) 
             }
         }while(num!=rNum);
         
         
         System.out.println("Hey! It is Diren");
         
+    }
+    
+    public static void clueNum (int number){ //I just added a silly message with a clue (Jenny)
+        
+        System.out.println("\n-- Here is a clue! --\nThe number is greater than " + (number - 5) + " and smaller than " +(number + 5) + "\n" );
+    
+    
     }
     
 }
