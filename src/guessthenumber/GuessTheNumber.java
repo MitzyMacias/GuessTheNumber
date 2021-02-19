@@ -26,6 +26,7 @@ public class GuessTheNumber {
         int rNum=(int)(Math.random()*(max-min+1)+min);
         System.out.println("The random number is "+rNum);
         int num=0;
+        int attempts = 1; //new parameter
                 
         do{
             System.out.println("Write a number: ");
@@ -37,10 +38,12 @@ public class GuessTheNumber {
                 System.out.println("Congratulations! You got it!");
             }else if(num>rNum){
                 System.out.println("The number you wrote is greater than the random number!");
-                clueNum(rNum);   //a clue for the user (Jenny)           
+                clueNum(rNum);   //a clue for the user (Jenny) 
+                attempts += 1;   // if num is not equal to rnum then add new attempt
             }else{
                 System.out.println("The number you wrote is less than the random number!");
                 clueNum(rNum);  //a clue for the user (Jenny) 
+                attempts += 1;  // if num is not equal to rnum then add new attempt
             }
         }while(num!=rNum);
         
